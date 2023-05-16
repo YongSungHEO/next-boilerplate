@@ -1,0 +1,13 @@
+# Googlebot
+User-agent: Googlebot
+Allow: /
+
+# Yeti
+User-agent: Yeti
+Allow: /
+
+# Host
+Host: https://www.sample.com
+
+# Sitemaps
+Sitemap: https://www.sample.com/sitemap.xml

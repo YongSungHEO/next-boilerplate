@@ -1,0 +1,88 @@
+{
+    "extends": [
+        "next/core-web-vitals"
+    ],
+    "env": {
+        "jest": true
+    },
+    "rules": {
+        // "no-console": process.env.NODE_ENV === "production" ? "warn": "off",
+        // "no-debugger": process.env.NODE_ENV === "production" ? "warn": "off",
+        "semi": [
+            2,
+            "always"
+        ],
+        "quotes": [
+            2,
+            "single",
+            {
+                "allowTemplateLiterals": true,
+                "avoidEscape": true
+            }
+        ],
+        "indent": [
+            2,
+            4,
+            {
+                "SwitchCase": 1,
+                "ignoredNodes": [
+                    "TemplateLiteral"
+                ]
+            }
+        ],
+        // allow async-await
+        "generator-star-spacing": "off",
+        "no-redeclare": 2,
+        "no-case-declarations": 2,
+        "curly": 2,
+        "no-empty-function": 2,
+        "no-eq-null": 2,
+        "no-lone-blocks": 2,
+        "no-eval": 2,
+        "no-proto": 2,
+        "no-useless-catch": 2,
+        "no-unused-vars": "off",
+        "no-array-constructor": 1,
+        "no-new-object": 1,
+        "no-const-assign": 2,
+        "no-var": 2,
+        "no-prototype-builtins": 2,
+        "prefer-template": 2,
+        "space-before-function-paren": [
+            2,
+            {
+                "anonymous": "never",
+                "named": "never",
+                "asyncArrow": "always"
+            }
+        ],
+        "space-before-blocks": 2,
+        "no-duplicate-imports": 2,
+        "no-undef": 2,
+        "one-var": [
+            2,
+            "never"
+        ],
+        "comma-style": [
+            2,
+            "last"
+        ],
+        "camelcase": [
+            2,
+            {
+                "ignoreImports": true,
+                "properties": "never",
+                "ignoreDestructuring": true
+            }
+        ],
+        "max-len": [
+            "warn",
+            {
+                "code": 120
+            }
+        ],
+        /* React */
+        "eslint-disable-next-line": "off",
+        "react/react-in-jsx-scope": "off"
+    }
+}
