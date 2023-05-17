@@ -1,2 +1,8 @@
-.main {
+.home {
+    .home__content {
+        display: flex;
+        flex-flow: wrap;
+        justify-content: space-between;
+        padding: 20px;
+    }
 }

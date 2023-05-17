@@ -1,6 +1,8 @@
 import { GetServerSideProps, NextPage } from 'next';
 import SampleService from '@/service/sample';
 import type { Sample } from '@/types/Sample';
+import SampleComponent from '@/components/Sample';
+// import { useModalStore } from '@/store/sample';
 import styles from '@/styles/Home.module.scss';
 
 interface Props {
@@ -19,12 +21,15 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
 };
 
 const Home: NextPage<Props> =({ list }) => {
+    // const isGnb = useModalStore(state => state.isGnb);
     return (
         <>
-            <main className={`${styles.main}`}>
-                {list.map(item => (
-                    <div key={item.id}>{item.title}</div>
-                ))}
+            <main className={styles['home']}>
+                <div className={styles['home__content']}>
+                    {list.map(item => (
+                        <SampleComponent key={item.id} sample={item} />
+                    ))}
+                </div>
             </main>
         </>
     );
