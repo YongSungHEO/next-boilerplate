@@ -6,14 +6,14 @@ export default class SampleService extends ApiService {
 
     constructor() {
         super();
-        this.sampleApi = this.register('');
+        this.sampleApi = this.register('http://localhost:3000');
     }
 
     protected unpackResponse(res: AxiosResponse): any {
         // 
     }
 
-    async sample(): Promise<any> {
-        return this.sampleApi.get('');
+    async fetchSample(): Promise<any> {
+        return this.sampleApi.get('api');
     }
 }
