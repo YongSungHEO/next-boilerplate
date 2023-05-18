@@ -4,6 +4,7 @@ const { withSentryConfig } = require('@sentry/nextjs');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
     enabled: process.env.ANALYZE === 'true',
 });
+const nextTranslate = require('next-translate-plugin');
 
 const sentryWebpackPluginOptions = {
     // Additional config options for the Sentry Webpack plugin. Keep in mind that
@@ -31,6 +32,11 @@ const nextConfig = {
     sentry: {
         hideSourceMaps: true,
     },
+    i18n: {
+        locales: ['en', 'ko'],
+        defaultLocale: 'ko',
+    },
+    ...nextTranslate()
 }
 
 module.exports = (
