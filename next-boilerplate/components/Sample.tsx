@@ -4,18 +4,20 @@ import type { Sample as SampleType } from '@/types/Sample';
 import styles from '@/styles/Sample.module.scss';
 
 type Props = {
-    sample: SampleType
+    sample: SampleType;
+    moveToDetail: (id: number) => void;
 };
 
-const Sample: React.FC<Props> = ({ sample }) => {
+const Sample: React.FC<Props> = ({ sample, moveToDetail }) => {
     return (
         <Card
             className={styles['sample']}
-            title={sample.title}
+            title={sample.name}
             bordered={false}
-            style={{ width: 145 }}
+            style={{ width: '100%' }}
+            onClick={() => moveToDetail(sample.id)}
         >
-            <p>{sample.title}</p>
+            <p>username: {sample.name}</p>
         </Card>
     );
 };

@@ -1,4 +1,5 @@
 import { GetServerSideProps, NextPage } from 'next';
+import { useRouter } from 'next/router';
 import SampleService from '@/service/sample';
 import type { Sample } from '@/types/Sample';
 import SampleComponent from '@/components/Sample';
@@ -12,7 +13,7 @@ interface Props {
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
     const sampleService = new SampleService();
     const res = await sampleService.fetchSample();
-    const list: Array<Sample> = res?.data?.data?.length ? res.data.data : [];
+    const list: Array<Sample> = res?.length ? res : [];
     return {
         props: {
             list
@@ -22,12 +23,17 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
 
 const Home: NextPage<Props> =({ list }) => {
     // const isGnb = useModalStore(state => state.isGnb);
+    const router = useRouter();
+    const moveToDetail = (id: number) => {
+        router.push(`/${id}`);
+    };
+
     return (
         <>
             <main className={styles['home']}>
                 <div className={styles['home__content']}>
                     {list.map(item => (
-                        <SampleComponent key={item.id} sample={item} />
+                        <SampleComponent key={item.id} sample={item} moveToDetail={moveToDetail} />
                     ))}
                 </div>
             </main>
