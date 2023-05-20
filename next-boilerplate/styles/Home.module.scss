@@ -2,6 +2,16 @@
     text-align: center;
     padding-top: 30px;
 
+    .home__title-area {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .home__title {
+            margin-left: 5px;
+        }
+    }
+
     .home__content {
         display: flex;
         flex-flow: wrap;

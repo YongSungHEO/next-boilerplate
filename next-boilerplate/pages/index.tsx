@@ -1,6 +1,7 @@
 import { GetServerSideProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
 import useTranslation from 'next-translate/useTranslation';
+import { AiOutlineUsergroupAdd } from 'react-icons/ai';
 import SampleService from '@/service/sample';
 import type { Sample } from '@/types/Sample';
 import SampleComponent from '@/components/Sample';
@@ -22,7 +23,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
     };
 };
 
-const Home: NextPage<Props> =({ list }) => {
+const Home: NextPage<Props> = ({ list }) => {
     // const isGnb = useModalStore(state => state.isGnb);
     const { t } = useTranslation('home');
     const router = useRouter();
@@ -33,7 +34,15 @@ const Home: NextPage<Props> =({ list }) => {
     return (
         <>
             <main className={styles['home']}>
-                <div>{t('user_list')}</div>
+                <div className={styles['home__title-area']}>
+                    <AiOutlineUsergroupAdd
+                        style={{
+                            width: '20px',
+                            height: '20px',
+                        }}
+                    />
+                    <span className={styles['home__title']}>{t('user_list')}</span>
+                </div>
                 <div className={styles['home__content']}>
                     {list.map(item => (
                         <SampleComponent key={item.id} sample={item} moveToDetail={moveToDetail} />

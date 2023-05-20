@@ -1,6 +1,7 @@
 import { GetServerSideProps, NextPage } from 'next';
 import { Card } from 'antd';
 import useTranslation from 'next-translate/useTranslation';
+import { AiOutlineUser } from 'react-icons/ai';
 import SampleService from '@/service/sample';
 import type { Sample } from '@/types/Sample';
 import styles from '@/styles/SampleDetail.module.scss';
@@ -20,13 +21,21 @@ export const getServerSideProps: GetServerSideProps<Props> = async (context) => 
     };
 };
 
-const Home: NextPage<Props> =({ data }) => {
+const Home: NextPage<Props> = ({ data }) => {
     const { t } = useTranslation('common');
 
     return (
         <>
             <div className={styles['sampleDetail']}>
-                <p className={styles['']}>{t('user_detail')}</p>
+                <div className={styles['sampleDetail__title-area']}>
+                    <AiOutlineUser
+                        style={{
+                            width: '20px',
+                            height: '20px',
+                        }}
+                    />
+                    <span className={styles['sampleDetail__title']}>{t('user_detail')}</span>
+                </div>
                 <Card
                     className={styles['sampleDetail__card']}
                     title={data.name}
