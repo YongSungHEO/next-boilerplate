@@ -24,7 +24,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
 
 const Home: NextPage<Props> =({ list }) => {
     // const isGnb = useModalStore(state => state.isGnb);
-    const { t } = useTranslation('common');
+    const { t } = useTranslation('home');
     const router = useRouter();
     const moveToDetail = (id: number) => {
         router.push(`/${id}`);
@@ -33,7 +33,7 @@ const Home: NextPage<Props> =({ list }) => {
     return (
         <>
             <main className={styles['home']}>
-                {t('user_list')}
+                <div>{t('user_list')}</div>
                 <div className={styles['home__content']}>
                     {list.map(item => (
                         <SampleComponent key={item.id} sample={item} moveToDetail={moveToDetail} />
