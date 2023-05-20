@@ -8,7 +8,6 @@ const Lang: React.FC = () => {
     const router = useRouter();
     const { locale, locales, pathname, asPath } = router;
     const [, setSelectedLocale] = useState('');
-    console.log(router);
 
     useEffect(() => {
         setSelectedLocale(locale ?? '');
