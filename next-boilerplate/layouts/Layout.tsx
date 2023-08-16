@@ -1,4 +1,4 @@
-import Lang from '@/container/Lang';
+import Lang from '@/containers/Lang';
 
 export default function Layout({ children }: any) {
     return (
