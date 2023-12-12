@@ -1,8 +1,8 @@
 {
-    "locales": ["ko", "en"],
-    "defaultLocale": "ko",
-    "pages": {
-      "*": ["common"],
-      "/": ["home"]
-    }
+  "locales": ["ko", "en"],
+  "defaultLocale": "ko",
+  "pages": {
+    "*": ["common"],
+    "/": ["home"]
+  }
 }
