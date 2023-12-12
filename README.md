@@ -5,8 +5,8 @@ Next로 프로젝트 시작 할 때, 사용하기 위한 bolierplate
 ## 버전
 
 * React: v18.2.0
-* Next: v13.4.1
-* Node: v18.12.1
+* Next: v14.0.4
+* Node: v20.10.0
 
 ## 사용 기술
 * Next
