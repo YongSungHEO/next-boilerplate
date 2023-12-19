@@ -1,7 +1,7 @@
-import SampleService from '@/service/sample';
 import { Card } from 'antd';
 import useTranslation from 'next-translate/useTranslation';
 import { AiOutlineUser } from 'react-icons/ai';
+import SampleService from '@/service/sample';
 import type { Sample } from '@/types/Sample';
 import styles from '@/styles/SampleDetail.module.scss';
 

@@ -1,8 +1,8 @@
-import SampleService from '@/service/sample';
 import useTranslation from 'next-translate/useTranslation';
 import Link from 'next/link';
 import { AiOutlineUsergroupAdd } from 'react-icons/ai';
 import SampleComponent from '@/components/Sample';
+import SampleService from '@/service/sample';
 import type { Sample } from '@/types/Sample';
 import styles from '@/styles/Home.module.scss';
 
