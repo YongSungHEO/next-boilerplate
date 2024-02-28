@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "test": "jest",
-    "lint": "next lint --fix ./src",
+    "lint": "next lint --fix",
     "format": "prettier --write ./src",
     "analyze": "ANALYZE=true npm run build",
     "postbuild": "next-sitemap",
